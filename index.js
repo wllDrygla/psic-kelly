@@ -34,12 +34,13 @@ app.get('/', (req, res)=>{
         })
 
     }else{
-        res.send('Você buscou por: '+req.query.busca);
+        res.render('single',{timeline:ti} );
     }
 })
 
 app.get('/:slug', (req,res)=>{
-    res.send(req.params.slug)
+    res.render('single',{titulo:req.params.slug} );
+
 })
 
 app.listen(5000, ()=>{

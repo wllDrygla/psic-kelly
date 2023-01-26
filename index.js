@@ -47,5 +47,5 @@ app.get('/:slug', (req,res)=>{
 })
 
 app.listen(8080, ()=>{
-    console.log('rodando');
+    console.log('rodando asdasdasd');
 })

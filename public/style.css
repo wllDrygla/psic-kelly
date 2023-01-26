@@ -13,7 +13,7 @@ header .logo{
     font-size: 30px;
 }
 .center{
-    max-width: 1500px;
+    max-width: 1800px;
     margin:0 auto;
     padding:0 2%;
     display: flex;
@@ -82,7 +82,7 @@ section.noticia-destaque > .center{
     position: relative;
 }
 .img-destaque img{
-    width: 100%;
+    width: 80%;
     border-radius: 10px;
 }
 .title-destaque-descricao{

@@ -5,7 +5,8 @@ var postSchema = new Schema({
     titulo:String,
     imagem:String,
     descricao:String,
-    resumo:String
+    resumo:String,
+    slug:String
 
 
 },{collection:'timeline'})

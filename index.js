@@ -25,7 +25,6 @@ app.use('/public',  express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, '/views'));
 
 app.get('/', (req, res)=>{
-    console.log(req.query);
 
     if(req.query.busca == null){
         Posts.find({}).exec(function(err,timeline){

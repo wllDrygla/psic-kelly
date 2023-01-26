@@ -175,3 +175,16 @@ section.outras-noticias  h2{
     font-size: 150%;
 
 }
+.logo{
+    color:white;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 55px;
+    text-decoration: none;
+
+
+}
+.logo > a{
+    text-decoration: none;
+    color: white;
+}

@@ -45,7 +45,16 @@ app.get('/:slug', (req,res)=>{
 
 })
 })
-
-app.listen(80, ()=>{
+/*
+app.listen(https, ()=>{
     console.log('rodando');
 })
+*/
+var https = require('https');
+var http = require('http');
+var fs = require('fs');
+
+
+
+http.createServer(app).listen(80);
+https.createServer(app).listen(443);

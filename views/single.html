@@ -4,20 +4,34 @@
     <div class="center">
         <div class="noticia-single">
             <h2><%= titulo %></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dapibus urna ac tellus tempus, quis sollicitudin tortor vulputate. Fusce cursus eget lacus porta imperdiet. Vivamus nulla libero, pellentesque in enim vitae, feugiat bibendum ligula. Vivamus dolor felis, blandit at rutrum ac, lobortis a quam. Ut quis enim eget tellus condimentum maximus ac ut odio. In hac habitasse platea dictumst. In ut nulla in velit pulvinar finibus. In in ante sit amet leo condimentum sodales. Quisque nisi dolor, mattis ut congue eget, fringilla id turpis.
+            <% for(let i =0; i < timeline.length; i++) { %>
+                <% if(titulo == timeline[i].titulo) { %>
 
-                Donec egestas massa urna, sed dapibus enim mollis facilisis. Nunc ut magna vulputate orci imperdiet rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque ex velit, egestas quis nunc in, aliquet euismod augue. Mauris pretium iaculis ipsum sed scelerisque. Sed nunc ipsum, iaculis nec turpis sed, pellentesque malesuada dolor. Vestibulum a congue ipsum. Fusce bibendum enim quis dapibus euismod. Praesent hendrerit bibendum tincidunt. Phasellus accumsan odio nec quam feugiat consequat. Sed porttitor mi vitae arcu hendrerit gravida. Suspendisse porttitor massa a quam vulputate dictum sit amet vitae justo. Sed tristique sodales turpis.
-                
-                Sed ex nisl, faucibus nec dui nec, porttitor consectetur massa. Maecenas sed lacinia nisl. Pellentesque in felis sit amet urna eleifend gravida. Pellentesque finibus tortor at iaculis dictum. Mauris condimentum non eros ut congue. Proin posuere porttitor sem et lacinia. Curabitur sed leo dolor. Nunc eget sapien nec mi egestas elementum. Integer porta sodales mi in gravida. Aenean hendrerit sem id pulvinar blandit.
-                
-                Sed tristique mattis ligula, a pharetra ipsum malesuada nec. Curabitur erat nisi, vehicula eget tempor vel, vehicula in odio. Aliquam id orci et urna consequat porttitor a in ante. Etiam vitae eros augue. Nullam risus urna, hendrerit a pellentesque ac, ullamcorper quis ex. Sed imperdiet sodales lacus, in sollicitudin dolor bibendum vitae. Donec egestas dui nisl, iaculis sodales mauris pharetra sed. Sed mollis tincidunt ullamcorper.
-                
-                Cras eget congue lorem, ac ullamcorper justo. Ut luctus mi ac augue porta, ac maximus libero rutrum. Suspendisse potenti. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque accumsan eros nisi. Aliquam sit amet nisi tempor, mattis augue vel, consequat enim. Duis neque ipsum, aliquam quis tristique sit amet, ornare nec lacus. Sed at odio ultricies, cursus leo in, finibus orci.</p>
-        </div>
+                    <img src="<%= timeline[i].imagem %>" width="500px">
+                    <p><%= timeline[i].descricao %></p>
+
+                <% } %>
+                <% } %>
+
+
+
+            </div>
 
         
     <div  class="mais-lidas">
         <h3>RECOMENDADOS</h3>
+        <% for(let i =5; i < 7; i++) { %>
+
+        <div class="box-ultima-single">
+            <img src="<%= timeline[i].imagem %>" width="200px">
+            <h4><%= timeline[i].titulo %> </h3>
+            <p><%= timeline[i].resumo %></p>
+            <a href="/<%= timeline[i].titulo %>">Saiba Mais</a>
+
+        </div>
+        <% } %>
+     
+       
        
     </div>
 

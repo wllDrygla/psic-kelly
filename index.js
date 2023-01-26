@@ -39,8 +39,12 @@ app.get('/', (req, res)=>{
 })
 
 app.get('/:slug', (req,res)=>{
-    res.render('single',{titulo:req.params.slug} );
+ //   res.render('single',{titulo:req.params.slug} );
+   
+  Posts.find({}).exec(function(err,timeline){
+    res.render('single', {timeline:timeline, titulo:req.params.slug});
 
+})
 })
 
 app.listen(5000, ()=>{

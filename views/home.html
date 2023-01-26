@@ -7,7 +7,7 @@
                     <div class="overlay-destaque"></div>
                     <div class="title-destaque-descricao">
                         <h2><%= timeline[0].titulo %> </h2>
-                        <p><%= timeline[0].descricao %></p>
+                        <p><%= timeline[0].resumo %></p>
                     </div>
                     <img src="<%= timeline[0].imagem %>" width="200px">
                 </div>
@@ -29,7 +29,7 @@
                         <div class="box-ultima-single">
                             <img src="<%= timeline[i].imagem %>" width="200px">
                             <h4><%= timeline[i].titulo %> </h3>
-                            <p><%= timeline[i].descricao %></p>
+                            <p><%= timeline[i].resumo %></p>
                             <a href="/<%= timeline[i].titulo %>">Saiba Mais</a>
                         </div>
                         <% } %>
@@ -41,7 +41,7 @@
                         <div class="box-ultima-single">
                             <img src="<%= timeline[i].imagem %>" width="200px">
                             <h4><%= timeline[i].titulo %> </h3>
-                            <p><%= timeline[i].descricao %></p>
+                            <p><%= timeline[i].resumo %></p>
                             <a href="/<%= timeline[i].titulo %>">Saiba Mais</a>
 
                         </div>
@@ -54,8 +54,8 @@
                         <div class="box-ultima-single">
                             <img src="<%= timeline[i].imagem %>" width="200px">
                             <h4><%= timeline[i].titulo %> </h3>
-                            <p><%= timeline[i].descricao %></p>
-                            <a href="/<%= timeline[i].titulo %>">Saiba Mais</a>
+                            <p><%= timeline[i].resumo %></p>
+                                                        <a href="/<%= timeline[i].titulo %>">Saiba Mais</a>
 
                         </div>
                         <% } %>

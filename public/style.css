@@ -7,11 +7,17 @@
 }
 header{
     padding: 8px 0;
-    background-color: rgb(0, 195, 255);
+    color: black;
+    background-image: linear-gradient(to right, #95f29d, #93eea8, #94eab2, #97e6bb, #9de1c1, #abddb9, #b6d8b4, #bfd4b1, #d1cea8, #e1c6a8, #eac0af, #ecbcbc);
+    border-bottom-style: solid ;
+    border-bottom-color: black;
+
 }
 header .logo{
     font-size: 30px;
+    color: black;
 }
+
 .center{
     max-width: 1800px;
     margin:0 auto;
@@ -21,36 +27,7 @@ header .logo{
 .logo{
     width: 50%;
 }
-.form-busca form{
-    position: relative;
-    display: inline-block;
 
-
-}
-.form-busca{
-    width: 50%;
-    text-align: right;
-    position: relative;
-
-}
-.form-busca i{
-    position: absolute;
-    right: 14px;
-    top: 10px;
-    color: white;
-
-    font-size: 20px;
-}
-.form-busca input{
-    background-color: rgba(1, 85, 212, 0.658);
-    padding-left: 20px;
-    font-size: 17px;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-
-
-}
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
@@ -68,10 +45,12 @@ section.noticia-destaque{
 }
 footer{
     margin: 20px 0;
-    background-color:rgb(0, 195, 255);
+    background-image: linear-gradient(to right, #95f29d, #93eea8, #94eab2, #97e6bb, #9de1c1, #abddb9, #b6d8b4, #bfd4b1, #d1cea8, #e1c6a8, #eac0af, #ecbcbc);
     text-align: right;
-    color: white;
+    color: black;
     padding: 8px 0;
+    border-top-style: solid ;
+    border-top-color: black;
 
 }
 section.noticia-destaque > .center{
@@ -131,8 +110,8 @@ section.outras-noticias  h2{
     display: inline;
 }
 .mais-lidas  > h3{
-    background-color: 3F51B5;
-    color: white;
+    background-image: linear-gradient(to right, #95f29d, #93eea8, #94eab2, #97e6bb, #9de1c1, #abddb9, #b6d8b4, #bfd4b1, #d1cea8, #e1c6a8, #eac0af, #ecbcbc);
+    color: black;
     text-align: center;
     padding: 10px 8px;
     border-top-left-radius: 10px;
@@ -176,15 +155,16 @@ section.outras-noticias  h2{
 
 }
 .logo{
-    color:white;
+    color:black;
     font-weight: lighter;
     font-style: italic;
-    font-size: 55px;
+    font-size: 85px;
     text-decoration: none;
+
 
 
 }
 .logo > a{
     text-decoration: none;
-    color: white;
+    color: black;
 }

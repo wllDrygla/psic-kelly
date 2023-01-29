@@ -180,3 +180,11 @@ section.outras-noticias  h2{
     padding: 50px 0;
 
 }
+
+@media (max-width : 1600px) {
+    .contato{
+        margin: 30 150;
+    }
+
+
+}

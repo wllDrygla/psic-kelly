@@ -7,6 +7,7 @@
 }
 header{
     padding: 8px 0;
+    padding-top: 50px;
     color: black;
     background-image: linear-gradient(to right, #95f29d, #93eea8, #94eab2, #97e6bb, #9de1c1, #abddb9, #b6d8b4, #bfd4b1, #d1cea8, #e1c6a8, #eac0af, #ecbcbc);
     border-bottom-style: solid ;
@@ -42,15 +43,17 @@ header .logo{
   }
 section.noticia-destaque{
     padding: 40px 0;
+
 }
 footer{
-    margin: 20px 0;
+    margin: 0;
     background-image: linear-gradient(to right, #95f29d, #93eea8, #94eab2, #97e6bb, #9de1c1, #abddb9, #b6d8b4, #bfd4b1, #d1cea8, #e1c6a8, #eac0af, #ecbcbc);
     text-align: right;
     color: black;
-    padding: 8px 0;
+    padding: 50px 50;
     border-top-style: solid ;
     border-top-color: black;
+    font-size: 30px;
 
 }
 section.noticia-destaque > .center{
@@ -59,9 +62,10 @@ section.noticia-destaque > .center{
 .img-destaque{
     width: 100%;
     position: relative;
+
 }
 .img-destaque img{
-    width: 80%;
+    width: 100%;
     border-radius: 10px;
 }
 .title-destaque-descricao{
@@ -167,4 +171,12 @@ section.outras-noticias  h2{
 .logo > a{
     text-decoration: none;
     color: black;
+}
+.contato{
+    text-align: center;
+    border: 2px black solid;
+    border-radius: 50px;
+    margin: 20 400px;
+    padding: 50px 0;
+
 }

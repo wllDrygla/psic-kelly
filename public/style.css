@@ -176,14 +176,15 @@ section.outras-noticias  h2{
     text-align: center;
     border: 2px black solid;
     border-radius: 50px;
-    margin: 20 400px;
-    padding: 50px 0;
+    margin: 50 300px;
+    padding: 30px 0;
+    font-size: 75%;
 
 }
 
-@media (max-width : 1600px) {
+@media (max-width : 1000px) {
     .contato{
-        margin: 30 150;
+        margin: 30 1500;
     }
 
 

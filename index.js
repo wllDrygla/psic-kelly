@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 const path = require('path');
 
@@ -13,6 +14,7 @@ mongoose.connect("mongodb+srv://Will:mafg8859@cluster0.pjngibn.mongodb.net/will?
 }).catch(function(err){
     console.log(err.message);
 })
+app.use(session({ secret:  'keyboard cat', cookie: { maxAge: 60000}}))
 
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
@@ -45,6 +47,63 @@ app.get('/:slug', (req,res)=>{
 
 })
 })
+var usuarios = [
+     {
+        login: "adm",
+        senha: "1234"
+    }
+]
+
+
+app.post('/admin/login',  (req, res)=>{
+    usuarios.map(function(val){
+        if(val.login == req.body.login && val.senha ==  req.body.senha){
+            req.session.login = "Admin";
+            res.redirect('/admin/login');
+        }else{
+            res.send("Credenciais inválidas")
+
+        }
+    })
+})
+
+app.get('/admin/login', (req,res)=>{
+    if(req.session.login  == null){
+        res.render('admin-login')
+    }else{
+        Posts.find({}).exec(function(err,timeline){
+            res.render('admin-painel', {timeline:timeline});
+
+        })
+
+    }
+}
+)
+
+app.post("/admin/cadastro", (req,res)=>{
+    console.log(req.body);
+    Posts.create({
+        titulo:req.body.titulo,
+        imagem:req.body.imagem,
+        descricao:req.body.descricao,
+        resumo:req.body.resumo,
+    })
+    res.redirect('/admin/login');
+
+})
+
+app.get("/admin/deletar/:id", (req, res)=>{
+    console.log(req.params.id);
+    Posts.deleteOne({_id: req.params.id}, (err)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.redirect('/admin/login');
+
+        }
+    });
+})
+
 
 app.listen(8080, ()=>{
     console.log('rodando asdasdasd');

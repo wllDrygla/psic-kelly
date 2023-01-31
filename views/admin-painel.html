@@ -1,0 +1,119 @@
+<html>
+<%- include('partials/header-adm.html') %>
+<title>Painel do ADM</title>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    h1{
+        text-align: center;
+    }
+    .header-painel{
+        text-align: center;
+        margin: 20px;
+        padding: 10px;
+
+    }
+    form{
+        padding: 10px;
+        display: grid;
+        text-align: center;
+    }
+    form > input{
+        margin: 10px;
+        text-align: center;
+        font-size: 20px;
+        display: grid;
+        padding: 10px;
+        font-weight: 20;
+    }
+    .cadastrar{
+        background-color: lightgreen;
+        font-weight: 700;
+        font-size: 30px;
+        padding: 20px 0;
+        border-radius: 10px;
+    }
+    h3{
+        margin-top: 30px;
+        text-align: center;
+    }
+    .descricao{
+        text-align: top;
+        height: 300px;
+    }
+    .quadro{
+        border-radius: 10px;
+        margin: 50px;
+        text-align: center;
+        border: 1px black solid;
+    }
+    .lista-artigos{
+        border:  1px black solid;
+        border-radius: 10px;
+        margin: 50px 0;
+        width: 90%;
+
+        text-align: center;
+    }
+    .lista{
+        text-align: center;
+
+    }
+    a{
+        text-decoration: none;
+        color: red;
+        font-size: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        
+        border: 1px black solid;
+
+    }
+</style>
+<body>
+    <div class="quadro">
+
+        <div class="header-painel">
+            <h2>CADASTRO DE ARTIGOS</h2>
+        
+        </div>
+    <form method="post" action="/admin/cadastro">
+        <h3>Título</h3>
+        <input type="text" name="titulo" placeholder="Título do artigo">
+        <h3>Imagem</h3>
+        <input type="text" name="imagem" placeholder="Link da imagem">
+        <h3>Resumo</h3>
+        <input type="text" name="resumo" placeholder="Resumo do artigo">
+        <h3>Conteúdo</h3>
+        <input class="descricao" type="text" name="descricao" placeholder="Conteúdo">
+        <input class="cadastrar" type="submit" name="acao" value="Cadastrar">
+    </form>
+</div>
+<h1>LISTA DE ARTIGOS</h2>
+
+    <div class="quadro">
+
+        <div class="header-painel">
+        
+        </div>
+
+        <div class="lista" style="text-align:center">
+            <% for(let i =0; i < timeline.length; i++) { %>
+                <div class="lista-artigos">
+                    <img src="<%= timeline[i].imagem %>" width="200px">
+                    <h4><%= timeline[i].titulo %> </h3>
+                    <p><%= timeline[i].resumo %></p>
+                    </br></br>
+                    <a href="/admin/deletar/<%= timeline[i].id %>"> Excluir</a></br></br>
+                </br>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</body>
+
+<%- include('partials/footer.html') %>
+</html>

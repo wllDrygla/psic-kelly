@@ -90,10 +90,10 @@ app.get('/admin/login', (req,res)=>{
 
 app.post("/admin/cadastro", (req,res)=>{
     console.log(req.files.arquivo);
-    req.files.arquivo.mv(__dirname+'/public/images/'+'psi-kelly-artigos'+new Date().getTime()+req.files.arquivo.name);
+    req.files.arquivo.mv(__dirname+'/public/images/'+'psi-kelly-artigos'+req.body.titulo+req.files.arquivo.name);
     Posts.create({
         titulo:req.body.titulo,
-        imagem:'/public/images/'+'psi-kelly-artigos'+new Date().getTime()+req.files.arquivo.name,
+        imagem:'/public/images/'+'psi-kelly-artigos'+req.body.titulo+req.files.arquivo.name,
         descricao:req.body.descricao,
         resumo:req.body.resumo,
     })

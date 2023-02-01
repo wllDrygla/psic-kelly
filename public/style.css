@@ -12,6 +12,7 @@ header{
     background-image: linear-gradient(to right, #95f29d, #93eea8, #94eab2, #97e6bb, #9de1c1, #abddb9, #b6d8b4, #bfd4b1, #d1cea8, #e1c6a8, #eac0af, #ecbcbc);
     border-bottom-style: solid ;
     border-bottom-color: black;
+    text-decoration: none;
 
 }
 header .logo{

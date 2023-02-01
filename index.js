@@ -100,12 +100,50 @@ app.post("/admin/cadastro", (req,res)=>{
     res.redirect('/admin/login');
 
 })
+app.post("/admin/editar/:id", (req,res)=>{
+
+    if(req.body.tituloeditado  == null){
+        var titulonovo = titulo
+}else{
+        var titulonovo = req.body.tituloeditado
+    
+    };
+    
+    if(req.body.descricaoeditada  == null){
+            var descricaonova = descricao
+    }else{
+            var descricaonova = req.body.descricaoeditada
+    
+            };
+            if(req.body.resumoeditado  == null){
+                var resumonovo = req.body.resumo
+            }else{
+                var resumonovo = req.body.resumoeditado
+        
+                };
+    let editado = {
+        titulo:titulonovo,
+        descricao:descricaonova,
+        resumo:resumonovo
+    }
+    
+    Posts.updateOne({_id: req.params.id}, editado, (err)=>{
+        if(err){
+            console.log(err)
+        }else{
+
+            res.redirect('/admin/login');
+
+        }
+    });
+})
 
 app.get("/admin/deletar/:id", (req, res)=>{
     Posts.deleteOne({_id: req.params.id}, (err)=>{
         if(err){
             console.log(err)
         }else{
+            
 
             res.redirect('/admin/login');
 

@@ -48,11 +48,21 @@
     }
     h3{
         margin-top: 30px;
-        font-size: 50px;
+        font-size: 30px;
+        text-align: center;
+    }
+    h4{
+        margin-top: 30px;
+        font-size: 20px;
         text-align: center;
     }
     .descricao{
         text-align: top;
+        height: 300px;
+    }
+    .descricaoeditada{
+        text-align: top;
+        content: editable;
         height: 300px;
     }
     .quadro{
@@ -68,6 +78,9 @@
         width: 90%;
 
         text-align: center;
+    }
+    .editar{
+        font-size: 10px;
     }
     .lista{
         text-align: center;
@@ -119,7 +132,21 @@
                     <img src="<%= timeline[i].imagem %>" width="200px">
                     <h4><%= timeline[i].titulo %> </h3>
                     <p><%= timeline[i].resumo %></p>
+                    <p><%= timeline[i].descricao %></p>
                     </br></br>
+                    <h3>EDITAR</h4>
+                    <form  class='editar' enctype="multipart/form-data" method="post" action="/admin/editar/<%= timeline[i].id %>">
+                        <h4>Título:</h4>
+                        <input type="text" name="tituloeditado" placeholder="<%= timeline[i].titulo %>"  value="<%= timeline[i].titulo %>">
+        
+                        <h4>Resumo:</h4>
+                        <input type="text" name="resumoeditado" placeholder="<%= timeline[i].resumo %>" value="<%= timeline[i].resumo %>">
+                        <h4>Conteúdo:</h4>
+                        <textarea contenteditable="true" class="descricaoeditada" type="text" name="descricaoeditada" value="<%= timeline[i].descricao %>"><%= timeline[i].descricao %></textarea>
+
+                        <input class="cadastrar" type="submit" name="Editar" value="Editar">
+                    </form>
+
                     <a href="/admin/deletar/<%= timeline[i].id %>"> EXCLUIR</a></br></br>
 
                 </br>

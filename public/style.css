@@ -26,7 +26,8 @@ header .logo{
     display: flex;
 }
 .logo{
-    width: 70%;
+    width: 90%;
+    text-decoration: none;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

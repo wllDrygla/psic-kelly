@@ -1,13 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const fileupload = require('express-fileupload')
 var bodyParser = require('body-parser');
 var session = require('express-session');
+
 
 const path = require('path');
 
 const app = express();
 
 const Posts = require('./Posts.js');
+const fileUpload = require('express-fileupload');
 
 mongoose.connect("mongodb+srv://Will:mafg8859@cluster0.pjngibn.mongodb.net/will?retryWrites=true&w=majority",{useNewUrlParser:  true, useUnifiedTopology: true}).then(function(){
     console.log('conectado com sucesso');
@@ -20,6 +23,11 @@ app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
+app.use(fileupload({
+    useTempFiles: true,
+    tempFileDir: path.join(__dirname, "temp")
+}))
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -81,10 +89,11 @@ app.get('/admin/login', (req,res)=>{
 )
 
 app.post("/admin/cadastro", (req,res)=>{
-    console.log(req.body);
+    console.log(req.files.arquivo);
+    req.files.arquivo.mv(__dirname+'/public/images/'+'psi-kelly-artigos'+new Date().getTime()+req.files.arquivo.name);
     Posts.create({
         titulo:req.body.titulo,
-        imagem:req.body.imagem,
+        imagem:'/public/images/'+'psi-kelly-artigos'+new Date().getTime()+req.files.arquivo.name,
         descricao:req.body.descricao,
         resumo:req.body.resumo,
     })
@@ -93,16 +102,19 @@ app.post("/admin/cadastro", (req,res)=>{
 })
 
 app.get("/admin/deletar/:id", (req, res)=>{
-    console.log(req.params.id);
     Posts.deleteOne({_id: req.params.id}, (err)=>{
         if(err){
             console.log(err)
         }else{
+
             res.redirect('/admin/login');
 
         }
     });
 })
+
+
+
 
 
 app.listen(8080, ()=>{

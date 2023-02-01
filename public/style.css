@@ -18,8 +18,13 @@ header{
 header .logo{
     font-size: 30px;
     color: black;
+    text-decoration: none;
 }
-
+header > h2{
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+}
 .center{
     max-width: 1800px;
     margin:0 auto;

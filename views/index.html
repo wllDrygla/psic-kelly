@@ -47,28 +47,27 @@
 								<% for(let i =2; i < timeline.length; i++) { %>
 									<div class="sobre-kelly" style="border: 1px rgb(161, 161, 161) solid;  margin: 30px; border-radius: 50px;">
 
-
-								<header class="major">
+								<header class="major"  >
 									<h2><%= timeline[i].titulo %></h2>
 								</header>
-								<ul class="features">
+								<ul class="features" style="max-width:100%">
 									<li>
-										<span class="image"><img src="<%= timeline[i].imagem %>" width="400px" >
-										<p><%= timeline[i].resumo %></p>
 								</ul>
-								
+								<span class="image"><img src="<%= timeline[i].imagem %>" style="max-width:100%">
+								<p><%= timeline[i].resumo %></p>
 
 								<footer class="major">
 									<ul class="actions special">
 										<li><a href="/<%= timeline[i].titulo %>" class="button" style="border: 1px black solid;">Saiba mais</a></li>
 									</ul>
 								</footer>
-								</div>
+							</br></br></br>
+						</div>
 								<% } %>
 							</section>
 
 						<!-- Second Section -->
-							<section id="second" class="main special" style="margin: 10px">
+							<section id="second" class="main special" style="margin: 10px; max-width: 100%;">
 							</br></br></br>
 								<h1 style="font-weight: 800; font-size: 70px; padding: 10px;">SOBRE MIM</h1>
 								<% for(let i =2; i < timeline.length; i++) { %>
@@ -77,12 +76,11 @@
 								<header class="major"  >
 									<h2><%= timeline[i].titulo %></h2>
 								</header>
-								<ul class="features">
+								<ul class="features" style="max-width:100%">
 									<li>
-										<span class="image"><img src="<%= timeline[i].imagem %>" width="400px" >
-										<p><%= timeline[i].resumo %></p>
 								</ul>
-								
+								<span class="image"><img src="<%= timeline[i].imagem %>" style="max-width:100%">
+								<p><%= timeline[i].resumo %></p>
 
 								<footer class="major">
 									<ul class="actions special">

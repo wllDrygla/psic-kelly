@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+
 section.noticia-destaque > .center{
     max-width: 760px;
 }
@@ -131,7 +132,9 @@ input, select, textarea {
 
 		html, body {
 			min-width: 320px;
+			max-width: 480px;
 		}
+		
 
 	}
 
@@ -8645,4 +8648,13 @@ input, select, textarea {
 
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
+			}
+
+			@media screen and (max-width: 1300px) {
+				.features{
+					width: 400px;
+				}
+				.image{
+					width: 100px;
+				}
 			}

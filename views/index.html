@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -28,6 +25,8 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
+							<li><a href="#first">Artigos de Psicanálise</a></li>
+							<li><a href="#second">Sobre mim</a></li>
 							<li><a href="#intro" class="active">Desenvolvedor</a></li>
 
 							<li><a href="#cta">Contato</a></li>
@@ -42,29 +41,57 @@
 
 						<!-- First Section -->
 
+		<h1 style="text-align: center;font-weight: 800; font-size: 70px; padding: 10px;">SOBRE A PSICANÁLISE</h1>
 
 							<section id="first" class="main special">
-
-                                <% for(let i =0; i < timeline.length; i++) { %>
-                                    <% if(titulo == timeline[i].titulo) { %>
-                                        <div class="sobre-kelly" style="border: 1px rgb(161, 161, 161) solid;  margin: 30px; border-radius: 50px;">
-
-                                                            <h1 style="text-align: center;font-weight: 800; font-size: 70px; padding: 10px;"><%= timeline[i].titulo %></h1>
+								<% for(let i =2; i < timeline.length; i++) { %>
+									<div class="sobre-kelly" style="border: 1px rgb(161, 161, 161) solid;  margin: 30px; border-radius: 50px;">
 
 
+								<header class="major">
+									<h2><%= timeline[i].titulo %></h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="image"><img src="<%= timeline[i].imagem %>" width="400px" >
+										<p><%= timeline[i].resumo %></p>
+								</ul>
+								
 
-                                                    <header class="major">
-                                                    </header>
-                                                    <ul class="features">
-                                                        <li>
-                                                            <span class="image"><img src="<%= timeline[i].imagem %>" width="400px" >
-                                                            <p><%= timeline[i].descricao %></p>
-                                                    </ul>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/<%= timeline[i].titulo %>" class="button" style="border: 1px black solid;">Saiba mais</a></li>
+									</ul>
+								</footer>
+								</div>
+								<% } %>
+							</section>
 
-                                        
-                                                        <% } %>
-                                                        <% } %>
-                                        
+						<!-- Second Section -->
+							<section id="second" class="main special" style="margin: 10px">
+							</br></br></br>
+								<h1 style="font-weight: 800; font-size: 70px; padding: 10px;">SOBRE MIM</h1>
+								<% for(let i =2; i < timeline.length; i++) { %>
+									<div class="sobre-kelly" style="border: 1px rgb(161, 161, 161) solid;  margin: 30px; border-radius: 50px;">
+
+								<header class="major"  >
+									<h2><%= timeline[i].titulo %></h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="image"><img src="<%= timeline[i].imagem %>" width="400px" >
+										<p><%= timeline[i].resumo %></p>
+								</ul>
+								
+
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="/<%= timeline[i].titulo %>" class="button" style="border: 1px black solid;">Saiba mais</a></li>
+									</ul>
+								</footer>
+							</br></br></br>
+						</div>
+								<% } %>
 
 							</section>
 							<section id="intro" class="main">
@@ -142,51 +169,4 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
-</html>
-
-<section class="noticia">
-    <div class="center">
-        <div class="noticia-single">
-            <h2><%= titulo %></h2>
-            <% for(let i =0; i < timeline.length; i++) { %>
-                <% if(titulo == timeline[i].titulo) { %>
-
-                    <img src="<%= timeline[i].imagem %>" width="500px">
-                    <p><%= timeline[i].descricao %></p>
-
-                <% } %>
-                <% } %>
-
-
-
-            </div>
-
-        
-    <div  class="mais-lidas">
-        <h3>RECOMENDADOS</h3>
-        <% for(let i =5; i < 7; i++) { %>
-
-        <div class="box-ultima-single">
-            <img src="<%= timeline[i].imagem %>" width="200px">
-            <h4><%= timeline[i].titulo %> </h3>
-            <p><%= timeline[i].resumo %></p>
-            <a href="/<%= timeline[i].titulo %>">Saiba Mais</a>
-
-        </div>
-        <% } %>
-     
-       
-       
-    </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-        <%- include('partials/footer.html') %>
-</body>
 </html>

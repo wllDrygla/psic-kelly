@@ -38,7 +38,7 @@ app.get('/', (req, res)=>{
 
     if(req.query.busca == null){
         Posts.find({}).exec(function(err,timeline){
-            res.render('home', {timeline:timeline});
+            res.render('index', {timeline:timeline});
 
         })
 

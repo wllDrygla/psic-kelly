@@ -31,50 +31,10 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-}
-
-section.noticia-destaque > .center{
-    max-width: 760px;
-}
-.img-destaque{
-    width: 100%;
-    position: relative;
+	background-color: black
 
 }
-.img-destaque img{
-    width: 100%;
-    border-radius: 10px;
-}
-.title-destaque-descricao{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 10px;
-    color: white;
-    z-index: 2;
 
-}
-.overlay-destaque{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    border-radius: 10px;
-
-    background-color: rgba(0,0,0,0.3);
-}
-section.noticia-destaque{
-    padding: 40px 0;
-
-}
-.center{
-    max-width: 1800px;
-    margin:0 auto;
-    padding:0 2%;
-    display: flex;
-}
 header{
 	text-align: center;
 }
@@ -200,7 +160,7 @@ input, select, textarea {
 		}
 
 	body {
-		background-color: #ffffff;
+		background-color: black
 		color: #000000;
 	}
 
@@ -8650,7 +8610,7 @@ input, select, textarea {
 				box-shadow: none !important;
 			}
 
-			@media screen and (max-width: 1300px) {
+			@media screen and (max-width: 100px) {
 				.features{
 					width: 400px;
 				}

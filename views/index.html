@@ -1,20 +1,8 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title >PSI KELLY CAMPOS</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/public/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="/public/assets/css/noscript.css" /></noscript>
-	</head>
-	<header id="header" style="text-align: center;">
-	</br></br>
-		<span class="logo" style="text-decoration:none"><img src="<%= timeline[0].imagem %>" width="180px" style="border-radius: 300px; text-decoration: none;">
-		</br>
-			<h1 style="color:rgb(83, 79, 79); text-decoration:none"><%= timeline[0].titulo %></h1></br></br>
-			<h2 style="color:rgb(83, 79, 79)"> Confira nossos artigos sobre Psicanálise e entre em contato para agendar sua consulta!</h2></br>
+	<%- include('partials/header.html') %>
 
-	</header>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -124,34 +112,7 @@
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Psicanálista Kelly Campos</h2>
-							<p><%= timeline[0].resumo %></p>
-
-					
-							<ul class="actions">
-								<li><a href="/" class="button">Inicio</a></li>
-							</ul>
-						</section>
-						<section>
-							<h2>Contato</h2>
-							<dl class="alt">
-								<dt>Endereço</dt>
-								<dd>Rua Cupuaçu, 124 - Ponta Grossa</dd>
-								<dt>Telefone</dt>
-								<dd>(42) 99166-8799</dd>
-								<dt>Email</dt>
-								<dd><a href="#">wdryglati@gmail.com</a></dd>
-							</dl>
-							<ul class="icons">
-								<li><a href="https://www.facebook.com/willian.drygla/" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-								<li><a href="https://www.instagram.com/wll_drygla/" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
-								<li><a href="https://github.com/wllDrygla" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy;<a href="/">DESENVOLVIDO POR WiLL DRYGLA</a>.</p>
-					</footer>
+				<%- include('partials/footer.html') %>
 
 			</div>
 

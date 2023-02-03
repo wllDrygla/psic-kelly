@@ -68,16 +68,19 @@ app.post('/admin/login',  (req, res)=>{
         if(val.login == req.body.login && val.senha ==  req.body.senha){
             req.session.login = "Admin";
             res.redirect('/admin/login');
-        }else{
-            res.send("Credenciais inválidas")
+        }else{            Posts.find({}).exec(function(err,timeline){
+            res.render('erro-login', {timeline:timeline});
 
-        }
+        })    }
     })
 })
 
 app.get('/admin/login', (req,res)=>{
     if(req.session.login  == null){
-        res.render('admin-login')
+        Posts.find({}).exec(function(err,timeline){
+            res.render('admin-login', {timeline:timeline});
+
+        })
     }else{
         Posts.find({}).exec(function(err,timeline){
             res.render('admin-painel', {timeline:timeline});

@@ -4,173 +4,76 @@
 <title>Painel do ADM</title>
 <style>
     *{
-        margin:0;
+        margin: 0;
         padding: 0;
-        box-sizing: border-box;
-    }
-    h1{
-        text-align: center;
-    }
-    .header-painel{
-        text-align: center;
-        margin: 20px;
-        padding: 10px;
-
-    }
-    form{
-        padding: 10px;
-        display: grid;
-        text-align: center;
-    }
-    .file{
-        margin: 10px 200px;
-        border-radius: 10px;
-        border: 1px black solid;
-        padding: 10px 0;
-        font-size: 50px;
-        text-align: center;
-    }
-    form > input{
-        margin: 10px;
-        text-align: center;
-        border-radius: 10px;
-
-        font-size: 20px;
-        display: grid;
-        padding: 10px;
-        font-weight: 20;
-    }
-    form > textarea{
-        padding: 30px;
-        font-size: 20px;
-
-    }
-    .cadastrar{
-        background-color: lightgreen;
-        font-weight: 700;
-        font-size: 30px;
-        padding: 20px 0;
-        border-radius: 10px;
-    }
-    h3{
-        margin-top: 30px;
-        font-size: 30px;
-        text-align: center;
-    }
-    h4{
-        margin-top: 30px;
-        font-size: 20px;
-        text-align: center;
-    }
-    .descricao{
-        text-align: top;
-        height: 300px;
-    }
-    .descricaoeditada{
-        text-align: top;
-        content: editable;
-        height: 300px;
     }
     .quadro{
-        border-radius: 10px;
-        margin: 50px;
+        background-color: rgba(245, 159, 159, 0.904);
         text-align: center;
+        margin: 0 200px;
         border: 1px black solid;
-    }
-    .lista-artigos{
-        border: 3px black solid;
         border-radius: 10px;
-        margin: 50px;
-        padding: 30px;
-        width: 90%;
+        padding: 10px;
+    }
 
-        text-align: center;
-    }
-    .editar{
-        font-size: 10px;
-    }
-    .lista{
-        text-align: center;
-
-    }
-    a{
-        text-decoration: none;
-        color: red;
-        font-size: 40px;
-        padding: 5px;
-        font-weight: 800;
-        border-radius: 5px;
-        
-        border: 5px black solid;
-
-    }
-    .editarartigos{
-        border: 3px red solid;
-        margin: 30px;
-        border-radius: 10px;
-    }
-    .editarartigos > h3{
-        border: 3px black solid;
-        margin: 10  250px;
-        border-radius: 10px;
-    }
 </style>
+
 <body>
     <div class="quadro">
 
         <div class="header-painel">
-            <h2>CADASTRO DE ARTIGOS</h2>
+            <h2 style="color: black;">CADASTRO DE ARTIGOS</h2></br>
         
         </div>
     <form enctype="multipart/form-data" method="post" action="/admin/cadastro">
-        <h3>Título:</h3>
-        <input type="text" name="titulo" placeholder="Título do artigo">
-        <h3>Imagem:</h3>
+        <h3 style="color: black;">Título:</h3>
+        <input type="text" name="titulo" placeholder="Título do artigo"></br>
+        <h3 style="color: black;">Imagem:</h3>
         <div class='file'>
-            <input  type="file" name="arquivo">
-        </div>
-        <h3>Resumo:</h3>
-        <input type="text" name="resumo" placeholder="Resumo do artigo">
-        <h3>Conteúdo:</h3>
-        <input class="descricao" type="text" name="descricao" placeholder="Conteúdo">
-        <input class="cadastrar" type="submit" name="acao" value="Cadastrar">
+            <input  style="color: black;" type="file" name="arquivo">
+        </div></br>
+        <h3 style="color: black;">Resumo:</h3>
+        <input type="text" name="resumo" placeholder="Resumo do artigo"></br>
+        <h3 style="color: black;">Conteúdo:</h3>
+        <input class="descricao" type="text" name="descricao" placeholder="Conteúdo"></br>
+        <input style="margin: 10px 0; color: black;"class="cadastrar" type="submit" name="acao" value="Cadastrar">
     </form>
 </div>
-<h1>LISTA DE ARTIGOS</h2>
+</br></br></br>
 
     <div class="quadro">
-
-        <div class="header-painel">
-        
+        <div class="header-painel">      
         </div>
 
         <div class="lista" style="text-align:center">
-            <% for(let i =0; i < timeline.length; i++) { %>
-                <div class="lista-artigos">
-                    <img src="<%= timeline[i].imagem %>" width="500px"></br></br>
-                    <h4>Título:</h4>
-                    <h4><%= timeline[i].titulo %> </h3></br></br>
-                        <h4>Resumo:</h4>
-                    <p><%= timeline[i].resumo %></p></br></br>
-                    <h4>Conteudo:</h4>
-                    <p><%= timeline[i].descricao %></p>
-                    </br></br>
-                    <div class="editarartigos">
-                        <h3>EDITAR</h3>
-                        <form  class='editar' enctype="multipart/form-data" method="post" action="/admin/editar/<%= timeline[i].id %>">
-                            <h4>Título:</h4>
-                            <input type="text" name="tituloeditado" placeholder="<%= timeline[i].titulo %>"  value="<%= timeline[i].titulo %>">
-            
-                            <h4>Resumo:</h4>
-                            <input type="text" name="resumoeditado" placeholder="<%= timeline[i].resumo %>" value="<%= timeline[i].resumo %>">
-                            <h4>Conteúdo:</h4>
-                            <textarea contenteditable="true" class="descricaoeditada" type="text" name="descricaoeditada" value="<%= timeline[i].descricao %>"><%= timeline[i].descricao %></textarea>
+            <h1 style="color: black; text-align: center;">LISTA DE ARTIGOS</h2>
 
-                            <input class="cadastrar" type="submit" name="Editar" value="Editar">
+            <% for(let i =0; i < timeline.length; i++) { %>
+                <div  style="border: 1px black solid; margin: 150px 10px; border-radius: 10px;" class="lista-artigos">
+                    <img src="<%= timeline[i].imagem %>" width="500px" style="border-radius:10px; margin: 10px 0"></br></br>
+                    <h4 style="color: black;">Título:</h4>
+                    <h4 style="color: black;"><%= timeline[i].titulo %> </h3></br></br>
+                        <h4 style="color: black;">Resumo:</h4>
+                    <p style="color: black;"><%= timeline[i].resumo %></p></br></br>
+                    <h4 style="color: black;">Conteudo:</h4>
+                    <p style="color: black;"><%= timeline[i].descricao %></p>
+                    </br></br>
+                    <div class="editarartigos" style="border: 2px black solid; margin: 10px; border-radius: 10px;">
+                        <h1 style="color: black;" >EDITAR</h1>
+                        <form  class='editar' enctype="multipart/form-data" method="post" action="/admin/editar/<%= timeline[i].id %>">
+                            <h4 style="color: black;">Título:</h4>
+                            <input style="color: black;" type="text" name="tituloeditado" placeholder="<%= timeline[i].titulo %>"  value="<%= timeline[i].titulo %>">
+            
+                            <h4 style="color: black;">Resumo:</h4>
+                            <input style="color: black;"type="text" name="resumoeditado" placeholder="<%= timeline[i].resumo %>" value="<%= timeline[i].resumo %>">
+                            <h4 style="color: black;" >Conteúdo:</h4>
+                            <textarea style="color: black; padding: 10px 0; max-height: 100%;" contenteditable="true" class="descricaoeditada" type="text" name="descricaoeditada" value="<%= timeline[i].descricao %>"><%= timeline[i].descricao %></textarea>
+
+                            <input style="color: black;" class="cadastrar" type="submit" name="Editar" value="Editar">
                     </div>
                     </form>
 
-                    <a href="/admin/deletar/<%= timeline[i].id %>"> EXCLUIR</a></br></br>
+                    <a href="/admin/deletar/<%= timeline[i].id %>" style="color: black;"> EXCLUIR</a></br></br>
 
                 </br>
                 </div>

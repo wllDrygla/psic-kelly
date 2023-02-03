@@ -27,15 +27,15 @@
         </div>
     <form enctype="multipart/form-data" method="post" action="/admin/cadastro">
         <h3 style="color: black;">Título:</h3>
-        <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 100%; background-color: white; border: 2px black solid; margin:10px"type="text" name="titulo" placeholder="Título do artigo"></br>
+        <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 80%; background-color: white; border: 2px black solid; margin:10px"type="text" name="titulo" placeholder="Título do artigo"></br>
         <h3 style="color: black;">Imagem:</h3>
         <div class='file'>
             <input  style="color: black;" type="file" name="arquivo">
         </div></br>
         <h3 style="color: black;">Resumo:</h3>
-        <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 100%; background-color: white; border: 2px black solid; margin:10px"type="text" name="resumo" placeholder="Resumo do artigo"></br>
+        <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 80%; background-color: white; border: 2px black solid; margin:10px"type="text" name="resumo" placeholder="Resumo do artigo"></br>
         <h3 style="color: black;">Conteúdo:</h3>
-        <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 100%; background-color: white; border: 2px black solid; margin:10px" class="descricao" type="text" name="descricao" placeholder="Conteúdo"></br>
+        <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 80%; background-color: white; border: 2px black solid; margin:10px" class="descricao" type="text" name="descricao" placeholder="Conteúdo"></br>
         <input style="margin: 10px 0; color: black;"class="cadastrar" type="submit" name="acao" value="Cadastrar">
     </form>
 </div>
@@ -62,12 +62,12 @@
                         <h1 style="color: black;" >EDITAR</h1>
                         <form  class='editar' enctype="multipart/form-data" method="post" action="/admin/editar/<%= timeline[i].id %>">
                             <h4 style="color: black;">Título:</h4>
-                            <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 70%; background-color: white; border: 2px black solid; margin:10px" type="text" name="tituloeditado" placeholder="<%= timeline[i].titulo %>"  value="<%= timeline[i].titulo %>">
+                            <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 80%; background-color: white; border: 2px black solid; margin:10px" type="text" name="tituloeditado" placeholder="<%= timeline[i].titulo %>"  value="<%= timeline[i].titulo %>">
             
                             <h4 style="color: black;">Resumo:</h4>
-                            <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 100%; background-color: white; border: 2px black solid; margin:10px"type="text" name="resumoeditado" placeholder="<%= timeline[i].resumo %>" value="<%= timeline[i].resumo %>">
+                            <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 80%; background-color: white; border: 2px black solid; margin:10px"type="text" name="resumoeditado" placeholder="<%= timeline[i].resumo %>" value="<%= timeline[i].resumo %>">
                             <h4 style="color: black;" >Conteúdo:</h4>
-                            <textarea style="color: black; padding: 10px 0; max-height: 100%;max-width: 100%; background-color: white; border: 2px black solid; margin:10px" contenteditable="true" class="descricaoeditada" type="text" name="descricaoeditada" value="<%= timeline[i].descricao %>"><%= timeline[i].descricao %></textarea>
+                            <textarea style="color: black; padding: 10px 0; max-height: 100%;max-width: 80%; background-color: white; border: 2px black solid; margin:10px" contenteditable="true" class="descricaoeditada" type="text" name="descricaoeditada" value="<%= timeline[i].descricao %>"><%= timeline[i].descricao %></textarea>
 
                             <input style="color: black;" class="cadastrar" type="submit" name="Editar" value="Editar">
                     </div>

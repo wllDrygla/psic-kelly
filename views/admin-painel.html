@@ -58,11 +58,11 @@
                     <h4 style="color: black;">Conteudo:</h4>
                     <p style="color: black;"><%= timeline[i].descricao %></p>
                     </br></br>
-                    <div class="editarartigos" style="border: 2px black solid; margin: 10px; border-radius: 10px;">
+                    <div class="editarartigos" style="border: 2px black solid; margin: 10px; border-radius: 10px;max-width: 100%;">
                         <h1 style="color: black;" >EDITAR</h1>
                         <form  class='editar' enctype="multipart/form-data" method="post" action="/admin/editar/<%= timeline[i].id %>">
-                            <h4 style="color: black; background-color: white; border: 2px black solid; margin:10px">Título:</h4>
-                            <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 100%; background-color: white; border: 2px black solid; margin:10px" type="text" name="tituloeditado" placeholder="<%= timeline[i].titulo %>"  value="<%= timeline[i].titulo %>">
+                            <h4 style="color: black;">Título:</h4>
+                            <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 70%; background-color: white; border: 2px black solid; margin:10px" type="text" name="tituloeditado" placeholder="<%= timeline[i].titulo %>"  value="<%= timeline[i].titulo %>">
             
                             <h4 style="color: black;">Resumo:</h4>
                             <input style="color: black; padding: 10px 0; max-height: 100%;max-width: 100%; background-color: white; border: 2px black solid; margin:10px"type="text" name="resumoeditado" placeholder="<%= timeline[i].resumo %>" value="<%= timeline[i].resumo %>">

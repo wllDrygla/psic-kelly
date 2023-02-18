@@ -8,11 +8,12 @@ var session = require('express-session');
 const path = require('path');
 
 const app = express();
+const Senha = require('./senha.js');
 
 const Posts = require('./Posts.js');
 const fileUpload = require('express-fileupload');
 
-mongoose.connect("mongodb+srv://Will:mafg8859@cluster0.pjngibn.mongodb.net/will?retryWrites=true&w=majority",{useNewUrlParser:  true, useUnifiedTopology: true}).then(function(){
+mongoose.connect("mongodb+srv://Will:"+Senha+"@cluster0.pjngibn.mongodb.net/will?retryWrites=true&w=majority",{useNewUrlParser:  true, useUnifiedTopology: true}).then(function(){
     console.log('conectado com sucesso');
 }).catch(function(err){
     console.log(err.message);
@@ -39,6 +40,7 @@ app.get('/', (req, res)=>{
     if(req.query.busca == null){
         Posts.find({}).exec(function(err,timeline){
             res.render('index', {timeline:timeline});
+            console.log(Senha)
 
         })
 
